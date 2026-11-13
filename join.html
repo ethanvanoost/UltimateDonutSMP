@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Join – UltimateDonutSMP</title>
+  <meta name="description" content="How to join UltimateDonutSMP on Minecraft Java (26.2 and older) or Bedrock: step-by-step guide, server IPs, voice chat setup, first-time tips and FAQ.">
+  <meta name="theme-color" content="#4FD36B">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph (link previews on Discord, etc.)
+       TIP: once you have a domain, change og:image to a full URL,
+       e.g. https://yourdomain.com/assets/logo.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltimateDonutSMP">
+  <meta property="og:title" content="How to Join – UltimateDonutSMP">
+  <meta property="og:description" content="How to join UltimateDonutSMP on Minecraft Java (26.2 and older) or Bedrock: step-by-step guide, server IPs, voice chat setup, first-time tips and FAQ.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Fonts: Pixelify Sans (headings), Figtree (body), JetBrains Mono (commands) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Marks that JavaScript is on (used for fade-in animations) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Ultimate<b>Donut</b>SMP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li><a class="nav__link" href="crates.html">Crates</a></li>
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="commands.html">Commands</a></li>
+          <li><a class="nav__link" href="join.html" aria-current="page">How to Join</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+          <li class="nav__play">
+            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
+              Play now
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">How to join</span>
+        <h1>Grab a seat at the table</h1>
+        <p class="lead">Joining takes less than a minute. Non-premium players can join too.</p>
+        <div class="ip-stack" style="margin-top:24px">
+          <div class="copy-box ip-box">
+            <span class="copy-box__label">JAVA</span>
+            <code class="copy-box__value" id="j-ip-java">ultimatedonutsmp.minekeep.gg</code>
+            <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#j-ip-java" aria-label="Copy Java IP">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+              <span data-copy-label>Copy IP</span>
+            </button>
+          </div>
+          <div class="copy-box ip-box ip-box--small">
+            <span class="copy-box__label">BEDROCK</span>
+            <code class="copy-box__value" id="j-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+            <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#j-ip-bedrock" aria-label="Copy Bedrock IP">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+              <span data-copy-label>Copy</span>
+            </button>
+          </div>
+        </div>
+        <div class="edition-tabs" style="margin:6px 0 0">
+          <a class="btn btn--small btn--primary" href="#java-steps">Java Edition steps</a>
+          <a class="btn btn--small" href="#bedrock">Bedrock Edition steps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JAVA STEPS ===== -->
+    <section class="section" id="java-steps" aria-labelledby="java-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Java Edition</span>
+          <h2 id="java-title">Join in 5 steps</h2>
+        </div>
+
+        <!-- The mockups below are simple illustrations, not real game screenshots -->
+        <ol class="join-steps">
+          <li class="join-step reveal">
+            <div>
+              <span class="join-step__num" aria-hidden="true"></span>
+              <h3>Open Minecraft: Java Edition</h3>
+              <p>Start the launcher and pick version <strong>26.2</strong>. Older versions can join too.</p>
+            </div>
+            <div class="mock mock--launcher" aria-hidden="true">
+              <div class="mock__title">Minecraft: Java Edition</div>
+              <div class="mock__version">Version: 26.2 (latest)</div>
+              <div class="mock__play">PLAY</div>
+            </div>
+          </li>
+
+          <li class="join-step reveal">
+            <div>
+              <span class="join-step__num" aria-hidden="true"></span>
+              <h3>Multiplayer → Add Server</h3>
+              <p>On the main menu click <strong>Multiplayer</strong>, then <strong>Add Server</strong> at the bottom.</p>
+            </div>
+            <div class="mock" aria-hidden="true">
+              <div class="mock__title">Play Multiplayer</div>
+              <div class="mock__row">
+                <span class="mock__btn">Join Server</span>
+                <span class="mock__btn">Direct Connect</span>
+                <span class="mock__btn mock__btn--hl">Add Server</span>
+              </div>
+              <div class="mock__row">
+                <span class="mock__btn">Edit</span>
+                <span class="mock__btn">Delete</span>
+                <span class="mock__btn">Refresh</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="join-step reveal">
+            <div>
+              <span class="join-step__num" aria-hidden="true"></span>
+              <h3>Enter the server address</h3>
+              <p>Give it any name you like, then paste this into <strong>Server Address</strong> and click Done:</p>
+              <div class="copy-box">
+                <code class="copy-box__value" id="step-ip">ultimatedonutsmp.minekeep.gg</code>
+                <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#step-ip" aria-label="Copy Java IP">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+            </div>
+            <div class="mock" aria-hidden="true">
+              <div class="mock__title">Edit Server Info</div>
+              <div class="mock__label">Server Name</div>
+              <div class="mock__input">UltimateDonutSMP</div>
+              <div class="mock__label">Server Address</div>
+              <div class="mock__input mock__input--focus">ultimatedonutsmp.minekeep.gg</div>
+              <span class="mock__btn mock__btn--hl">Done</span>
+            </div>
+          </li>
+
+          <li class="join-step reveal">
+            <div>
+              <span class="join-step__num" aria-hidden="true"></span>
+              <h3>Click Join Server</h3>
+              <p>Select UltimateDonutSMP in your server list and click <strong>Join Server</strong>. Welcome in!</p>
+            </div>
+            <div class="mock" aria-hidden="true">
+              <div class="mock__server">
+                <img src="assets/favicon.png" alt="" width="48" height="48" loading="lazy">
+                <div>
+                  <b>UltimateDonutSMP</b>
+                  <small>PVP and Explore. Will you join?<br>PVP | Survival | AFK and more!</small>
+                </div>
+                <span class="bars"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:13px"></i></span>
+              </div>
+              <div class="mock__row mock__row--2">
+                <span class="mock__btn mock__btn--hl">Join Server</span>
+                <span class="mock__btn">Cancel</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="join-step reveal" id="step-voice">
+            <div>
+              <span class="join-step__num" aria-hidden="true"></span>
+              <h3>Install Simple Voice Chat <span class="tag-optional">Optional</span></h3>
+              <p>Want to talk to nearby players? Install the <strong>Simple Voice Chat</strong> mod for your version (it runs on Fabric, Forge, NeoForge or Quilt). You'll get a voice chat prompt when you join.</p>
+            </div>
+            <div class="mock mock--launcher" aria-hidden="true">
+              <svg class="mock__mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="2" width="6" height="12" rx="1"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></svg>
+              <div class="mock__waves"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="mock__version">Proximity voice: ON</div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- ===== BEDROCK ===== -->
+        <div class="bedrock-box reveal" id="bedrock">
+          <span class="eyebrow" style="color:var(--blue)">Bedrock Edition</span>
+          <h2 style="font-size:1.6rem">Playing on phone, console or Windows Bedrock?</h2>
+          <ol>
+            <li>Open Minecraft (Bedrock Edition) and tap <strong>Play</strong>.</li>
+            <li>Go to the <strong>Servers</strong> tab, scroll down and tap <strong>Add Server</strong>.</li>
+            <li>Enter any name, and use this as the <strong>Server Address</strong>:
+              <div class="copy-box">
+                <code class="copy-box__value" id="b-ip">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+                <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#b-ip" aria-label="Copy Bedrock IP">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+            </li>
+            <!-- OWNER: check that the port below is correct for your Bedrock setup -->
+            <li>Leave the port on <strong>19132</strong>, tap <strong>Save</strong>, then join.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FIRST TIME TIPS ===== -->
+    <section class="section section--raised" aria-labelledby="tips-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">New here?</span>
+          <h2 id="tips-title">First time on the server?</h2>
+        </div>
+        <div class="tips">
+          <div class="tip reveal">
+            <h3>🎒 Starter kit</h3>
+            <p>New players get a starter kit, so you won't start with empty pockets.</p>
+          </div>
+          <div class="tip reveal">
+            <h3>🌲 Head into the wild</h3>
+            <p>Type <span class="cmd">/rtp</span> to teleport to a random spot and start building.</p>
+          </div>
+          <div class="tip reveal">
+            <h3>💎 Earn shards</h3>
+            <p>Type <span class="cmd">/afk</span> and stay in the AFK zone to earn <span class="shards">shards</span>.</p>
+          </div>
+          <div class="tip reveal">
+            <h3>🎁 Check the crates</h3>
+            <p>Type <span class="cmd">/crates</span> to see the crates and what you can win.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Questions? Answers.</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Which version do I need?</summary>
+            <div class="faq__body">
+              <p>The server runs on <strong>Java Edition 26.2</strong>, but older versions can join too. Bedrock players can join with <code class="cmd">ultimatedonutsmp.bedrock.minekeep.gg</code>.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can non-premium players join?</summary>
+            <div class="faq__body">
+              <p>Yes! Non-premium players can join too.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How do I use voice chat?</summary>
+            <div class="faq__body">
+              <p>Install the <strong>Simple Voice Chat</strong> mod for your Minecraft version and join the server. You'll get a voice chat prompt when you join. Then just talk – players near you will hear you.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How do I report a hacker?</summary>
+            <div class="faq__body">
+              <p>Type <span class="cmd">/reporthacker &lt;user&gt; &lt;reason&gt;</span> in game. Staff will take a look.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Where do I get help?</summary>
+            <div class="faq__body">
+              <p>Ask staff in game with <span class="cmd">/helpop</span>, or ask in our <a href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">Discord</a>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-wordmark.png" alt="UltimateDonutSMP" width="900" height="210" loading="lazy">
+          <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
+          <div class="footer-ips">
+            <div class="copy-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+            <div class="copy-box">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="crates.html">Crates</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="commands.html">Commands</a></li>
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="rules.html">Rules</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-title">Community</div>
+          <div class="footer-social">
+            <a class="btn btn--discord btn--small" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Discord
+            </a>
+            <a class="btn btn--youtube btn--small" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              YouTube
+            </a>
+            <p class="muted" style="margin:6px 0 0;font-size:.9rem">Or type <span class="cmd">/discord</span> and <span class="cmd">/youtube</span> in game.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2026 UltimateDonutSMP. Not affiliated with Mojang, Microsoft or DonutSMP.</p>
+    </div>
+  </footer>
+</body>
+</html>

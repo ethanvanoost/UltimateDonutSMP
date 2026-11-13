@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gacha Crates – UltimateDonutSMP</title>
+  <meta name="description" content="UltimateDonutSMP uses gacha crates: spin the reward wheel or bulk open up to 10,000 keys at once. See all 5 crates – Common, Prime, Crimson, Gold and Amethyst.">
+  <meta name="theme-color" content="#4FD36B">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph (link previews on Discord, etc.)
+       TIP: once you have a domain, change og:image to a full URL,
+       e.g. https://yourdomain.com/assets/logo.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltimateDonutSMP">
+  <meta property="og:title" content="Gacha Crates – UltimateDonutSMP">
+  <meta property="og:description" content="UltimateDonutSMP uses gacha crates: spin the reward wheel or bulk open up to 10,000 keys at once. See all 5 crates – Common, Prime, Crimson, Gold and Amethyst.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Fonts: Pixelify Sans (headings), Figtree (body), JetBrains Mono (commands) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Marks that JavaScript is on (used for fade-in animations) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Ultimate<b>Donut</b>SMP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li><a class="nav__link" href="crates.html" aria-current="page">Crates</a></li>
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="commands.html">Commands</a></li>
+          <li><a class="nav__link" href="join.html">How to Join</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+          <li class="nav__play">
+            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
+              Play now
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Crates</span>
+        <h1>Gacha crates. Spin to win.</h1>
+        <p class="lead">UltimateDonutSMP uses <strong>gacha crates</strong>. Open one key and a reward wheel spins, or bulk open all your keys at once.</p>
+        <div class="bulk-tip">
+          <div class="keycaps" aria-hidden="true"><span class="keycap">SHIFT</span>+<span class="keycap">R-CLICK</span></div>
+          <p style="margin:0"><strong>Bulk open:</strong> sneak + right-click a crate to open all your keys at once, up to <strong>10,000 keys</strong> in one click.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CRATE CARDS =====
+         To change a crate color, edit --crate-* variables at the top of style.css -->
+    <section class="section" aria-labelledby="crates-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">5 crates</span>
+          <h2 id="crates-title">Pick your flavor</h2>
+          <p class="lead">Each crate has its own key, bought with <span class="shards">shards</span>. Hover (or tap) a crate to peek inside.</p>
+        </div>
+
+        <ul class="crate-grid" style="list-style:none;margin:0;padding:0">
+          <li class="crate-card crate-card--common reveal" tabindex="0">
+            <div class="crate" aria-hidden="true"><span class="crate__glow"></span><span class="crate__body"></span><span class="crate__lid"></span></div>
+            <h3>Common</h3>
+            <span class="price"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l7 9-7 11-7-11z"/></svg>500 shards</span>
+          </li>
+          <li class="crate-card crate-card--prime reveal" tabindex="0">
+            <div class="crate" aria-hidden="true"><span class="crate__glow"></span><span class="crate__body"></span><span class="crate__lid"></span></div>
+            <h3>Prime</h3>
+            <span class="price"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l7 9-7 11-7-11z"/></svg>2,500 shards</span>
+          </li>
+          <li class="crate-card crate-card--crimson reveal" tabindex="0">
+            <div class="crate" aria-hidden="true"><span class="crate__glow"></span><span class="crate__body"></span><span class="crate__lid"></span></div>
+            <h3>Crimson</h3>
+            <span class="price"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l7 9-7 11-7-11z"/></svg>2,500 shards</span>
+          </li>
+          <li class="crate-card crate-card--gold reveal" tabindex="0">
+            <div class="crate" aria-hidden="true"><span class="crate__glow"></span><span class="crate__body"></span><span class="crate__lid"></span></div>
+            <h3>Gold</h3>
+            <span class="price"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l7 9-7 11-7-11z"/></svg>10,000 shards</span>
+          </li>
+          <li class="crate-card crate-card--amethyst reveal" tabindex="0">
+            <div class="crate" aria-hidden="true"><span class="crate__glow"></span><span class="crate__body"></span><span class="crate__lid"></span></div>
+            <h3>Amethyst</h3>
+            <span class="price"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l7 9-7 11-7-11z"/></svg>20,000 shards</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== HOW TO GET KEYS ===== -->
+    <section class="section section--raised" aria-labelledby="keys-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Keys</span>
+          <h2 id="keys-title">How to get keys</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="card card--purple reveal">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l7 9-7 11-7-11z"/><path d="M12 2v20"/></svg></span>
+            <h3>Crate shop</h3>
+            <p>Buy keys with <span class="shards">shards</span> in <span class="cmd">/crateshop</span>. Earn shards in the AFK zone.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></span>
+            <h3>Key-alls</h3>
+            <p>Every hour, everyone online gets keys. Just be on the server.</p>
+          </div>
+          <div class="card card--blue reveal">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 11a9 9 0 0 1 18 0zM6 11l6 7 6-7M12 11v7"/><rect x="9" y="18" width="6" height="4"/></svg></span>
+            <h3>Supply drops</h3>
+            <p>Fight for supply drop loot. <a href="events.html#supply-drops">How supply drops work</a>.</p>
+          </div>
+          <div class="card card--red reveal">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+            <h3>Advent calendar</h3>
+            <p>Claim a daily reward in December with <span class="cmd">/advent</span>. <a href="events.html#advent-calendar">See the calendar</a>.</p>
+          </div>
+        </div>
+        <div class="reveal" style="margin-top:28px">
+          <div class="feature__cmds-title">Crate commands</div>
+          <ul class="cmd-list">
+            <li class="cmd">/crates</li><li class="cmd">/keys</li><li class="cmd">/crateshop</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GACHA WHEEL DEMO ===== -->
+    <section class="section" aria-labelledby="gacha-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Try it</span>
+          <h2 id="gacha-title">Try the gacha wheel</h2>
+          <p class="lead">Get a feel for how opening a crate works. Hit Roll and watch it spin.</p>
+        </div>
+
+        <div class="gacha reveal" id="gacha">
+          <span class="gacha__badge">Just for fun – not real rewards</span>
+          <div class="gacha__window">
+            <span class="gacha__pointer" aria-hidden="true"></span>
+            <div class="gacha__track" aria-hidden="true">
+              <!-- Slots are generated by main.js. Edit the REWARDS list there. -->
+            </div>
+          </div>
+          <div class="gacha__controls">
+            <button class="btn btn--primary btn--big" type="button" id="gacha-roll">Roll</button>
+            <p class="gacha__result" id="gacha-result" aria-live="polite"><noscript>Turn on JavaScript to try the wheel.</noscript></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-wordmark.png" alt="UltimateDonutSMP" width="900" height="210" loading="lazy">
+          <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
+          <div class="footer-ips">
+            <div class="copy-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+            <div class="copy-box">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="crates.html">Crates</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="commands.html">Commands</a></li>
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="rules.html">Rules</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-title">Community</div>
+          <div class="footer-social">
+            <a class="btn btn--discord btn--small" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Discord
+            </a>
+            <a class="btn btn--youtube btn--small" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              YouTube
+            </a>
+            <p class="muted" style="margin:6px 0 0;font-size:.9rem">Or type <span class="cmd">/discord</span> and <span class="cmd">/youtube</span> in game.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2026 UltimateDonutSMP. Not affiliated with Mojang, Microsoft or DonutSMP.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commands – UltimateDonutSMP</title>
+  <meta name="description" content="Searchable list of every UltimateDonutSMP command: teleports, shops and selling, crates and events, PvP, social and info commands, with one-click copy.">
+  <meta name="theme-color" content="#4FD36B">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph (link previews on Discord, etc.)
+       TIP: once you have a domain, change og:image to a full URL,
+       e.g. https://yourdomain.com/assets/logo.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltimateDonutSMP">
+  <meta property="og:title" content="Commands – UltimateDonutSMP">
+  <meta property="og:description" content="Searchable list of every UltimateDonutSMP command: teleports, shops and selling, crates and events, PvP, social and info commands, with one-click copy.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Fonts: Pixelify Sans (headings), Figtree (body), JetBrains Mono (commands) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Marks that JavaScript is on (used for fade-in animations) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Ultimate<b>Donut</b>SMP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li><a class="nav__link" href="crates.html">Crates</a></li>
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="commands.html" aria-current="page">Commands</a></li>
+          <li><a class="nav__link" href="join.html">How to Join</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+          <li class="nav__play">
+            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
+              Play now
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Commands</span>
+        <h1>Every command, one list</h1>
+        <p class="lead">Search or filter to find the command you need, then click the copy button. In game you can also type <span class="cmd">/help</span>.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <!-- Search + filters (sticky) -->
+        <div class="cmd-tools">
+          <div class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>
+            <label class="sr-only" for="cmd-search">Search commands</label>
+            <input type="search" id="cmd-search" placeholder="Search commands, e.g. sell or tpa" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="filters" role="group" aria-label="Filter by category">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" type="button" data-filter="travel" aria-pressed="false">Getting around</button>
+            <button class="filter" type="button" data-filter="money" aria-pressed="false">Money &amp; shops</button>
+            <button class="filter" type="button" data-filter="crates" aria-pressed="false">Crates &amp; events</button>
+            <button class="filter" type="button" data-filter="pvp" aria-pressed="false">PvP</button>
+            <button class="filter" type="button" data-filter="social" aria-pressed="false">Social</button>
+            <button class="filter" type="button" data-filter="info" aria-pressed="false">Info</button>
+          </div>
+          <p class="cmd-count" id="cmd-count" aria-live="polite">60 commands</p>
+        </div>
+
+        <!-- To add a command: copy a <li class="cmd-row"> line into the right group -->
+        <section class="cmd-group" data-cat="travel" aria-label="Getting around">
+          <h2>Getting around</h2>
+          <ul class="cmd-table">
+            <li class="cmd-row"><div class="cmd-row__text"><code>/spawn</code><span>Teleport to spawn</span></div><button class="icon-copy" type="button" data-copy="/spawn" aria-label="Copy /spawn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/rtp</code><span>Random teleport into the wild</span></div><button class="icon-copy" type="button" data-copy="/rtp" aria-label="Copy /rtp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/rtpq</code><span>Join the RTP queue</span></div><button class="icon-copy" type="button" data-copy="/rtpq" aria-label="Copy /rtpq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/afk</code><span>Go to the AFK zone</span></div><button class="icon-copy" type="button" data-copy="/afk" aria-label="Copy /afk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/home</code><span>Teleport home</span></div><button class="icon-copy" type="button" data-copy="/home" aria-label="Copy /home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/sethome</code><span>Set a home</span></div><button class="icon-copy" type="button" data-copy="/sethome" aria-label="Copy /sethome"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/homes</code><span>List your homes</span></div><button class="icon-copy" type="button" data-copy="/homes" aria-label="Copy /homes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/delhome</code><span>Delete a home</span></div><button class="icon-copy" type="button" data-copy="/delhome" aria-label="Copy /delhome"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/warp</code><span>Teleport to a warp</span></div><button class="icon-copy" type="button" data-copy="/warp" aria-label="Copy /warp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/tpa <i>&lt;player&gt;</i></code><span>Ask to teleport to a player</span></div><button class="icon-copy" type="button" data-copy="/tpa" aria-label="Copy /tpa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/tpahere <i>&lt;player&gt;</i></code><span>Ask a player to come to you</span></div><button class="icon-copy" type="button" data-copy="/tpahere" aria-label="Copy /tpahere"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/tpaccept</code><span>Accept a request</span></div><button class="icon-copy" type="button" data-copy="/tpaccept" aria-label="Copy /tpaccept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/tpadeny</code><span>Deny a request</span></div><button class="icon-copy" type="button" data-copy="/tpadeny" aria-label="Copy /tpadeny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/tpauto</code><span>Toggle auto-accept</span></div><button class="icon-copy" type="button" data-copy="/tpauto" aria-label="Copy /tpauto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+          </ul>
+        </section>
+        <section class="cmd-group" data-cat="money" aria-label="Money &amp; shops">
+          <h2>Money &amp; shops</h2>
+          <ul class="cmd-table">
+            <li class="cmd-row"><div class="cmd-row__text"><code>/shop</code><span>Open the shop</span></div><button class="icon-copy" type="button" data-copy="/shop" aria-label="Copy /shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/shardshop</code><span>Spend shards</span></div><button class="icon-copy" type="button" data-copy="/shardshop" aria-label="Copy /shardshop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/crateshop</code><span>Buy crate keys</span></div><button class="icon-copy" type="button" data-copy="/crateshop" aria-label="Copy /crateshop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/sell</code><span>Sell menu</span></div><button class="icon-copy" type="button" data-copy="/sell" aria-label="Copy /sell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/sellall</code><span>Sell everything</span></div><button class="icon-copy" type="button" data-copy="/sellall" aria-label="Copy /sellall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/sellhand</code><span>Sell the item in your hand</span></div><button class="icon-copy" type="button" data-copy="/sellhand" aria-label="Copy /sellhand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/sellmulti</code><span>Your sell multiplier</span></div><button class="icon-copy" type="button" data-copy="/sellmulti" aria-label="Copy /sellmulti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/worth</code><span>Item worth</span></div><button class="icon-copy" type="button" data-copy="/worth" aria-label="Copy /worth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/meta</code><span>Current farming meta</span></div><button class="icon-copy" type="button" data-copy="/meta" aria-label="Copy /meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ah</code><span>Auction house</span></div><button class="icon-copy" type="button" data-copy="/ah" aria-label="Copy /ah"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/orders</code><span>Orders board</span></div><button class="icon-copy" type="button" data-copy="/orders" aria-label="Copy /orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/bal</code><span>Your balance</span></div><button class="icon-copy" type="button" data-copy="/bal" aria-label="Copy /bal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/pay <i>&lt;player&gt;</i> <i>&lt;amount&gt;</i></code><span>Pay a player</span></div><button class="icon-copy" type="button" data-copy="/pay" aria-label="Copy /pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/shards</code><span>Your shards</span></div><button class="icon-copy" type="button" data-copy="/shards" aria-label="Copy /shards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/billford</code><span>Billford trader</span></div><button class="icon-copy" type="button" data-copy="/billford" aria-label="Copy /billford"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+          </ul>
+        </section>
+        <section class="cmd-group" data-cat="crates" aria-label="Crates &amp; events">
+          <h2>Crates &amp; events</h2>
+          <ul class="cmd-table">
+            <li class="cmd-row"><div class="cmd-row__text"><code>/crates</code><span>Crates menu</span></div><button class="icon-copy" type="button" data-copy="/crates" aria-label="Copy /crates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/keys</code><span>Your keys</span></div><button class="icon-copy" type="button" data-copy="/keys" aria-label="Copy /keys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/advent</code><span>Advent calendar</span></div><button class="icon-copy" type="button" data-copy="/advent" aria-label="Copy /advent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/event</code><span>Join the supply drop</span></div><button class="icon-copy" type="button" data-copy="/event" aria-label="Copy /event"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+          </ul>
+        </section>
+        <section class="cmd-group" data-cat="pvp" aria-label="PvP">
+          <h2>PvP</h2>
+          <ul class="cmd-table">
+            <li class="cmd-row"><div class="cmd-row__text"><code>/duel <i>&lt;player&gt;</i></code><span>Challenge a player</span></div><button class="icon-copy" type="button" data-copy="/duel" aria-label="Copy /duel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/duel queue</code><span>Join the duel queue</span></div><button class="icon-copy" type="button" data-copy="/duel queue" aria-label="Copy /duel queue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ffa</code><span>Join FFA</span></div><button class="icon-copy" type="button" data-copy="/ffa" aria-label="Copy /ffa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ffastats</code><span>FFA stats</span></div><button class="icon-copy" type="button" data-copy="/ffastats" aria-label="Copy /ffastats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/pvp</code><span>Ranked PvP arena</span></div><button class="icon-copy" type="button" data-copy="/pvp" aria-label="Copy /pvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/bounty</code><span>Bounties</span></div><button class="icon-copy" type="button" data-copy="/bounty" aria-label="Copy /bounty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/leave</code><span>Leave a queue or match</span></div><button class="icon-copy" type="button" data-copy="/leave" aria-label="Copy /leave"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+          </ul>
+        </section>
+        <section class="cmd-group" data-cat="social" aria-label="Social">
+          <h2>Social</h2>
+          <ul class="cmd-table">
+            <li class="cmd-row"><div class="cmd-row__text"><code>/team</code><span>Manage your team</span></div><button class="icon-copy" type="button" data-copy="/team" aria-label="Copy /team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/friends</code><span>Friends</span></div><button class="icon-copy" type="button" data-copy="/friends" aria-label="Copy /friends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/msg <i>&lt;player&gt;</i></code><span>Private message</span></div><button class="icon-copy" type="button" data-copy="/msg" aria-label="Copy /msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/r</code><span>Reply</span></div><button class="icon-copy" type="button" data-copy="/r" aria-label="Copy /r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ignore <i>&lt;player&gt;</i></code><span>Ignore a player</span></div><button class="icon-copy" type="button" data-copy="/ignore" aria-label="Copy /ignore"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/discord</code><span>Discord link</span></div><button class="icon-copy" type="button" data-copy="/discord" aria-label="Copy /discord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/youtube</code><span>YouTube link</span></div><button class="icon-copy" type="button" data-copy="/youtube" aria-label="Copy /youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+          </ul>
+        </section>
+        <section class="cmd-group" data-cat="info" aria-label="Info">
+          <h2>Info</h2>
+          <ul class="cmd-table">
+            <li class="cmd-row"><div class="cmd-row__text"><code>/settings</code><span>Settings</span></div><button class="icon-copy" type="button" data-copy="/settings" aria-label="Copy /settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/stats</code><span>Player stats</span></div><button class="icon-copy" type="button" data-copy="/stats" aria-label="Copy /stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/lb</code><span>Leaderboards</span></div><button class="icon-copy" type="button" data-copy="/lb" aria-label="Copy /lb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/playtime</code><span>Playtime</span></div><button class="icon-copy" type="button" data-copy="/playtime" aria-label="Copy /playtime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ping</code><span>Ping</span></div><button class="icon-copy" type="button" data-copy="/ping" aria-label="Copy /ping"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ec</code><span>Ender chest</span></div><button class="icon-copy" type="button" data-copy="/ec" aria-label="Copy /ec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/nv</code><span>Night vision</span></div><button class="icon-copy" type="button" data-copy="/nv" aria-label="Copy /nv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/phantom</code><span>Toggle phantoms</span></div><button class="icon-copy" type="button" data-copy="/phantom" aria-label="Copy /phantom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/ranks</code><span>Rank perks</span></div><button class="icon-copy" type="button" data-copy="/ranks" aria-label="Copy /ranks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/rules</code><span>Server rules</span></div><button class="icon-copy" type="button" data-copy="/rules" aria-label="Copy /rules"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/help</code><span>Help</span></div><button class="icon-copy" type="button" data-copy="/help" aria-label="Copy /help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/reporthacker <i>&lt;user&gt;</i> <i>&lt;reason&gt;</i></code><span>Report a hacker</span></div><button class="icon-copy" type="button" data-copy="/reporthacker" aria-label="Copy /reporthacker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+            <li class="cmd-row"><div class="cmd-row__text"><code>/helpop</code><span>Ask staff for help</span></div><button class="icon-copy" type="button" data-copy="/helpop" aria-label="Copy /helpop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg></button></li>
+          </ul>
+        </section>
+
+        <p class="cmd-empty" id="cmd-empty" hidden>No commands match that search</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-wordmark.png" alt="UltimateDonutSMP" width="900" height="210" loading="lazy">
+          <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
+          <div class="footer-ips">
+            <div class="copy-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+            <div class="copy-box">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="crates.html">Crates</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="commands.html">Commands</a></li>
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="rules.html">Rules</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-title">Community</div>
+          <div class="footer-social">
+            <a class="btn btn--discord btn--small" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Discord
+            </a>
+            <a class="btn btn--youtube btn--small" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              YouTube
+            </a>
+            <p class="muted" style="margin:6px 0 0;font-size:.9rem">Or type <span class="cmd">/discord</span> and <span class="cmd">/youtube</span> in game.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2026 UltimateDonutSMP. Not affiliated with Mojang, Microsoft or DonutSMP.</p>
+    </div>
+  </footer>
+</body>
+</html>

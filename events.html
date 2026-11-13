@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events – Supply Drops, Advent Calendar &amp; Key-alls – UltimateDonutSMP</title>
+  <meta name="description" content="UltimateDonutSMP events: supply drop waves every 20–45 minutes, a 24-day December advent calendar with /advent, and hourly key-alls for everyone online.">
+  <meta name="theme-color" content="#4FD36B">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph (link previews on Discord, etc.)
+       TIP: once you have a domain, change og:image to a full URL,
+       e.g. https://yourdomain.com/assets/logo.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltimateDonutSMP">
+  <meta property="og:title" content="Events – Supply Drops, Advent Calendar &amp; Key-alls – UltimateDonutSMP">
+  <meta property="og:description" content="UltimateDonutSMP events: supply drop waves every 20–45 minutes, a 24-day December advent calendar with /advent, and hourly key-alls for everyone online.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Fonts: Pixelify Sans (headings), Figtree (body), JetBrains Mono (commands) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Marks that JavaScript is on (used for fade-in animations) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Ultimate<b>Donut</b>SMP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li><a class="nav__link" href="crates.html">Crates</a></li>
+          <li><a class="nav__link" href="events.html" aria-current="page">Events</a></li>
+          <li><a class="nav__link" href="commands.html">Commands</a></li>
+          <li><a class="nav__link" href="join.html">How to Join</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+          <li class="nav__play">
+            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
+              Play now
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Events</span>
+        <h1>Something's always dropping</h1>
+        <p class="lead">Supply drops to fight over, a daily advent calendar in December, and free keys every hour.</p>
+      </div>
+    </section>
+
+    <!-- ===== SUPPLY DROPS ===== -->
+    <section class="section" id="supply-drops" aria-labelledby="drops-title">
+      <div class="container event-block">
+        <div class="reveal">
+          <span class="eyebrow">Supply drops</span>
+          <h2 id="drops-title">Crates from the sky</h2>
+          <p class="lead">Every 20–45 minutes, a wave of crates lands in the supply drop world. Get there first and fight for the loot.</p>
+          <ul class="fact-list">
+            <li><span>A wave of <strong>2 to 10 crates</strong> lands every <strong>20–45 minutes</strong>.</span></li>
+            <li><span>Type <span class="cmd">/event</span> to enter, then <strong>follow the beacon beam</strong> to a crate.</span></li>
+            <li><span>Each wave lasts <strong>15 minutes</strong>. Fight other players for the loot.</span></li>
+            <li><span>Loot can include <strong>money vouchers</strong>.</span></li>
+          </ul>
+        </div>
+
+        <!-- Illustration: falling crate + beacon beam (pure CSS/SVG) -->
+        <div class="drop-scene reveal" aria-hidden="true">
+          <span class="drop-scene__timer">Next wave: 20–45 min</span>
+          <span class="drop-scene__beam"></span>
+          <div class="drop-scene__crate">
+            <svg viewBox="0 0 74 120">
+              <!-- parachute -->
+              <path d="M2 40 Q37 -6 72 40 Z" fill="#E2B47A" stroke="#000" stroke-width="3"/>
+              <path d="M2 40 Q20 32 37 40 Q54 32 72 40" fill="#FF7EB9" stroke="#000" stroke-width="3"/>
+              <path d="M4 40 L16 76 M37 40 L37 76 M70 40 L58 76" stroke="#000" stroke-width="2"/>
+              <!-- crate -->
+              <rect x="10" y="74" width="54" height="42" fill="#8A5E2A" stroke="#000" stroke-width="4"/>
+              <rect x="10" y="74" width="54" height="12" fill="#4FD36B" stroke="#000" stroke-width="4"/>
+              <path d="M14 90 L60 112 M60 90 L14 112" stroke="#5A3C1A" stroke-width="4"/>
+            </svg>
+          </div>
+          <span class="drop-scene__beacon"></span>
+          <span class="drop-scene__ground"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADVENT CALENDAR ===== -->
+    <section class="section section--raised" id="advent-calendar" aria-labelledby="advent-title">
+      <div class="container advent-wrap">
+        <div class="reveal">
+          <span class="eyebrow">Advent calendar</span>
+          <h2 id="advent-title">24 days of rewards</h2>
+          <p class="lead">Every day from <strong>December 1 to 24</strong>, claim a reward with <span class="cmd">/advent</span>.</p>
+          <ul class="fact-list">
+            <li><span><strong>Missed a day?</strong> You can still claim it later.</span></li>
+            <li><span><strong>Rare rewards</strong> are announced to the whole server.</span></li>
+          </ul>
+
+          <!-- Countdown: shown outside December (main.js) -->
+          <div id="advent-countdown" hidden>
+            <p class="muted" style="margin:0">The calendar opens in:</p>
+            <div class="countdown" role="timer" aria-label="Countdown to December 1">
+              <div><b data-cd="d">0</b><span>days</span></div>
+              <div><b data-cd="h">00</b><span>hours</span></div>
+              <div><b data-cd="m">00</b><span>min</span></div>
+              <div><b data-cd="s">00</b><span>sec</span></div>
+            </div>
+          </div>
+          <!-- Message: shown during December (main.js) -->
+          <p class="text-green" id="advent-live" hidden style="font-family:var(--font-display);font-size:1.2rem"></p>
+        </div>
+
+        <div class="reveal">
+          <!-- Doors are updated by main.js based on the visitor's date:
+               past days = opened, today = glowing, future = locked -->
+          <ol class="advent" id="advent" aria-label="Advent calendar doors">
+            <li class="door">1</li><li class="door">2</li><li class="door">3</li><li class="door">4</li><li class="door">5</li><li class="door">6</li><li class="door">7</li><li class="door">8</li><li class="door">9</li><li class="door">10</li><li class="door">11</li><li class="door">12</li><li class="door">13</li><li class="door">14</li><li class="door">15</li><li class="door">16</li><li class="door">17</li><li class="door">18</li><li class="door">19</li><li class="door">20</li><li class="door">21</li><li class="door">22</li><li class="door">23</li><li class="door">24</li>
+          </ol>
+          <div class="advent-legend" aria-hidden="true">
+            <span class="l-open">Opened</span><span class="l-today">Today</span><span class="l-locked">Locked</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KEY-ALLS ===== -->
+    <section class="section" id="keyalls" aria-labelledby="keyall-title">
+      <div class="container">
+        <div class="keyall reveal">
+          <svg viewBox="0 0 90 90" aria-hidden="true">
+            <circle cx="30" cy="45" r="18" fill="none" stroke="#000" stroke-width="14"/>
+            <circle cx="30" cy="45" r="18" fill="none" stroke="#4FD36B" stroke-width="7"/>
+            <rect x="46" y="40" width="40" height="11" fill="#4FD36B" stroke="#000" stroke-width="3"/>
+            <rect x="68" y="50" width="9" height="14" fill="#4FD36B" stroke="#000" stroke-width="3"/>
+            <rect x="80" y="50" width="6" height="10" fill="#4FD36B" stroke="#000" stroke-width="3"/>
+          </svg>
+          <div>
+            <span class="eyebrow">Key-alls</span>
+            <h2 id="keyall-title">Free keys every hour</h2>
+            <p>Every hour, everyone online gets crate keys. Open them with <span class="cmd">/crates</span> and check what you have with <span class="cmd">/keys</span>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-wordmark.png" alt="UltimateDonutSMP" width="900" height="210" loading="lazy">
+          <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
+          <div class="footer-ips">
+            <div class="copy-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+            <div class="copy-box">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="crates.html">Crates</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="commands.html">Commands</a></li>
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="rules.html">Rules</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-title">Community</div>
+          <div class="footer-social">
+            <a class="btn btn--discord btn--small" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Discord
+            </a>
+            <a class="btn btn--youtube btn--small" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              YouTube
+            </a>
+            <p class="muted" style="margin:6px 0 0;font-size:.9rem">Or type <span class="cmd">/discord</span> and <span class="cmd">/youtube</span> in game.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2026 UltimateDonutSMP. Not affiliated with Mojang, Microsoft or DonutSMP.</p>
+    </div>
+  </footer>
+</body>
+</html>

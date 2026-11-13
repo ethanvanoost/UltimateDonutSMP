@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UltimateDonutSMP – The old DonutSMP, back on the menu</title>
+  <meta name="description" content="UltimateDonutSMP is a Minecraft survival server inspired by the old DonutSMP: PvP, AFK shards, gacha crates, supply drops, an auction house and duels. Java and Bedrock.">
+  <meta name="theme-color" content="#4FD36B">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph (link previews on Discord, etc.)
+       TIP: once you have a domain, change og:image to a full URL,
+       e.g. https://yourdomain.com/assets/logo.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltimateDonutSMP">
+  <meta property="og:title" content="UltimateDonutSMP – The old DonutSMP, back on the menu">
+  <meta property="og:description" content="UltimateDonutSMP is a Minecraft survival server inspired by the old DonutSMP: PvP, AFK shards, gacha crates, supply drops, an auction house and duels. Java and Bedrock.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Fonts: Pixelify Sans (headings), Figtree (body), JetBrains Mono (commands) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Marks that JavaScript is on (used for fade-in animations) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Ultimate<b>Donut</b>SMP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="features.html">Features</a></li>
+          <li><a class="nav__link" href="crates.html">Crates</a></li>
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="commands.html">Commands</a></li>
+          <li><a class="nav__link" href="join.html">How to Join</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+          <li class="nav__play">
+            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
+              Play now
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Falling sprinkles (drawn by main.js, hidden for reduced motion) -->
+      <canvas class="sprinkles" id="sprinkles" aria-hidden="true"></canvas>
+
+      <div class="container hero__inner">
+        <div>
+          <span class="eyebrow">Minecraft survival server · Java &amp; Bedrock</span>
+          <h1 id="hero-title">The old <span class="text-green">DonutSMP</span>, back on the menu.</h1>
+          <p class="hero__intro">PvP, survival, AFK and more, with gacha crates, supply drops, an auction house and duels, built on plugins we code ourselves.</p>
+
+          <!-- IP boxes -->
+          <div class="ip-stack">
+            <div class="copy-box ip-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy IP</span>
+              </button>
+            </div>
+            <div class="copy-box ip-box ip-box--small">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Live status (filled in by main.js from api.mcsrvstat.us) -->
+          <div class="status" id="server-status" data-state="loading" aria-live="polite">
+            <span class="status__dot" aria-hidden="true"></span>
+            <span class="status__text">Checking server status…</span>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn--primary btn--big" href="join.html">How to join</a>
+            <a class="btn btn--big" href="features.html">See features</a>
+          </div>
+        </div>
+
+        <div class="hero__art">
+          <img class="hero__logo" src="assets/logo.png" alt="UltimateDonutSMP logo: a green-frosted donut" width="512" height="512">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Green frosting drip edge under the hero (decorative) -->
+    <div class="drip" aria-hidden="true">
+      <svg viewBox="0 0 1440 104" preserveAspectRatio="none">
+        <path fill="#2A8A43" d="M0 0H1440V24L1408 24C1408 58 1402 76 1390 76C1378 76 1372 58 1372 24L1314 24C1314 42 1309 52 1300 52C1291 52 1286 42 1286 24L1237 24C1237 66 1229 88 1215 88C1201 88 1193 66 1193 24L1135 24C1135 47 1130 60 1120 60C1110 60 1105 47 1105 24L1050 24C1050 70 1043 94 1030 94C1017 94 1010 70 1010 24L953 24C953 41 948 50 940 50C932 50 927 41 927 24L869 24C869 59 862 78 850 78C838 78 831 59 831 24L771 24C771 46 765 58 755 58C745 58 739 46 739 24L683 24C683 73 675 100 660 100C645 100 637 73 637 24L579 24C579 44 574 54 565 54C556 54 551 44 551 24L490 24C490 62 483 82 470 82C457 82 450 62 450 24L395 24C395 47 390 60 380 60C370 60 365 47 365 24L312 24C312 68 304 92 290 92C276 92 268 68 268 24L208 24C208 42 203 52 195 52C187 52 182 42 182 24L124 24C124 58 117 76 105 76C93 76 86 58 86 24L45 24C45 46 40 58 30 58C20 58 15 46 15 24L0 24Z"/>
+        <path fill="#4FD36B" d="M0 0H1440V18L1408 18C1408 48 1402 64 1390 64C1378 64 1372 48 1372 18L1314 18C1314 32 1309 40 1300 40C1291 40 1286 32 1286 18L1237 18C1237 56 1229 76 1215 76C1201 76 1193 56 1193 18L1135 18C1135 38 1130 48 1120 48C1110 48 1105 38 1105 18L1050 18C1050 60 1043 82 1030 82C1017 82 1010 60 1010 18L953 18C953 31 948 38 940 38C932 38 927 31 927 18L869 18C869 49 862 66 850 66C838 66 831 49 831 18L771 18C771 36 765 46 755 46C745 46 739 36 739 18L683 18C683 64 675 88 660 88C645 88 637 64 637 18L579 18C579 34 574 42 565 42C556 42 551 34 551 18L490 18C490 52 483 70 470 70C457 70 450 52 450 18L395 18C395 38 390 48 380 48C370 48 365 38 365 18L312 18C312 58 304 80 290 80C276 80 268 58 268 18L208 18C208 32 203 40 195 40C187 40 182 32 182 18L124 18C124 48 117 64 105 64C93 64 86 48 86 18L45 18C45 36 40 46 30 46C20 46 15 36 15 18L0 18Z"/>
+        <rect y="0" width="1440" height="5" fill="#000" opacity=".55"/>
+      </svg>
+    </div>
+
+    <!-- ===== FEATURE HIGHLIGHTS ===== -->
+    <section class="section section--raised" aria-labelledby="highlights-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">What's on the menu</span>
+          <h2 id="highlights-title">Everything you loved, freshly baked</h2>
+          <p class="lead">Most of what makes the server special runs on plugins the owner codes himself.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <a class="card card--yellow reveal" href="crates.html">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="8" width="18" height="13"/><path d="M3 12h18M2 4h20v4H2z"/></svg></span>
+            <h3>Gacha crates</h3>
+            <p>Open a key and watch the reward wheel spin, or sneak + right-click to bulk open up to 10,000 keys at once.</p>
+            <span class="card__more">See the crates →</span>
+          </a>
+          <a class="card card--blue reveal" href="events.html">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 11a9 9 0 0 1 18 0zM6 11l6 7 6-7M12 11v7"/><rect x="9" y="18" width="6" height="4"/></svg></span>
+            <h3>Supply drops &amp; advent calendar</h3>
+            <p>Crates rain down every 20–45 minutes for you to fight over, plus a daily advent reward in December.</p>
+            <span class="card__more">See the events →</span>
+          </a>
+          <a class="card card--tan reveal" href="features.html#economy">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M15 9h-4.5a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 1 0 3H9"/></svg></span>
+            <h3>Economy</h3>
+            <p>Shops, sell multipliers, the farming meta, an auction house, buy orders and the Billford trader.</p>
+            <span class="card__more">Economy features →</span>
+          </a>
+          <a class="card card--red reveal" href="features.html#pvp">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4l11 11M4 4h4M4 4v4M20 4L9 15M20 4h-4M20 4v4M6 14l4 4M18 14l-4 4M5 19l2-2M19 19l-2-2"/></svg></span>
+            <h3>PvP</h3>
+            <p>Duels and a duel queue, FFA, a ranked PvP arena, bounties and fast crystals.</p>
+            <span class="card__more">PvP features →</span>
+          </a>
+          <a class="card card--purple reveal" href="features.html#afk">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l7 9-7 11-7-11z"/><path d="M12 2v20"/></svg></span>
+            <h3>AFK shards</h3>
+            <p>Chill in the AFK zone to earn <span class="shards">shards</span>, then spend them in the shard shop and crate shop.</p>
+            <span class="card__more">How AFK works →</span>
+          </a>
+          <a class="card reveal" href="features.html#voice">
+            <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="1"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></svg></span>
+            <h3>Proximity voice chat</h3>
+            <p>Talk to players near you with the Simple Voice Chat mod. Perfect for trash talk in a duel.</p>
+            <span class="card__more">All features →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JOIN IN 3 STEPS ===== -->
+    <section class="section" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Hungry yet?</span>
+          <h2 id="steps-title">Join in 3 steps</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal">
+            <h3>Open Minecraft</h3>
+            <p>Java Edition 26.2 (older versions work too) or Bedrock Edition.</p>
+          </li>
+          <li class="reveal">
+            <h3>Add the server</h3>
+            <p>Multiplayer → Add Server, and paste <code class="cmd">ultimatedonutsmp.minekeep.gg</code></p>
+          </li>
+          <li class="reveal">
+            <h3>Join &amp; grab your kit</h3>
+            <p>Click Join Server, collect your starter kit and type <span class="cmd">/rtp</span> to head into the wild.</p>
+          </li>
+        </ol>
+        <a class="btn btn--primary reveal" href="join.html">Full join guide →</a>
+      </div>
+    </section>
+
+    <!-- ===== COMMUNITY ===== -->
+    <section class="section section--raised" aria-labelledby="community-title">
+      <div class="container">
+        <div class="community reveal">
+          <span class="eyebrow">Community</span>
+          <h2 id="community-title">Hang out with the crew</h2>
+          <p class="lead" style="margin:0 auto;max-width:560px">Get news, giveaways and help on Discord, and catch videos on YouTube. In game, type <span class="cmd">/discord</span> or <span class="cmd">/youtube</span>.</p>
+          <div class="btn-row">
+            <a class="btn btn--discord btn--big" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Join the Discord
+            </a>
+            <a class="btn btn--youtube btn--big" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              Watch on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-wordmark.png" alt="UltimateDonutSMP" width="900" height="210" loading="lazy">
+          <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
+          <div class="footer-ips">
+            <div class="copy-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+            <div class="copy-box">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="crates.html">Crates</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="commands.html">Commands</a></li>
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="rules.html">Rules</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-title">Community</div>
+          <div class="footer-social">
+            <a class="btn btn--discord btn--small" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Discord
+            </a>
+            <a class="btn btn--youtube btn--small" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              YouTube
+            </a>
+            <p class="muted" style="margin:6px 0 0;font-size:.9rem">Or type <span class="cmd">/discord</span> and <span class="cmd">/youtube</span> in game.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2026 UltimateDonutSMP. Not affiliated with Mojang, Microsoft or DonutSMP.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Features – UltimateDonutSMP</title>
+  <meta name="description" content="All UltimateDonutSMP features: economy and auction house, PvP duels and FFA, AFK shards, teams, homes and warps, spawners, tools, proximity voice chat and fair play.">
+  <meta name="theme-color" content="#4FD36B">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph (link previews on Discord, etc.)
+       TIP: once you have a domain, change og:image to a full URL,
+       e.g. https://yourdomain.com/assets/logo.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltimateDonutSMP">
+  <meta property="og:title" content="Features – UltimateDonutSMP">
+  <meta property="og:description" content="All UltimateDonutSMP features: economy and auction house, PvP duels and FFA, AFK shards, teams, homes and warps, spawners, tools, proximity voice chat and fair play.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Fonts: Pixelify Sans (headings), Figtree (body), JetBrains Mono (commands) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Marks that JavaScript is on (used for fade-in animations) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Ultimate<b>Donut</b>SMP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="features.html" aria-current="page">Features</a></li>
+          <li><a class="nav__link" href="crates.html">Crates</a></li>
+          <li><a class="nav__link" href="events.html">Events</a></li>
+          <li><a class="nav__link" href="commands.html">Commands</a></li>
+          <li><a class="nav__link" href="join.html">How to Join</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+          <li class="nav__play">
+            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
+              Play now
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Features</span>
+        <h1>Every topping, one server</h1>
+        <p class="lead">Here's everything you can do on UltimateDonutSMP, with the commands you need. Tap any section in the menu to jump to it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container features-layout">
+
+        <!-- Sticky side menu (becomes a scrollable tab bar on mobile) -->
+        <nav class="side-nav" aria-label="Feature sections">
+          <div class="side-nav__title">Jump to</div>
+          <ul>
+            <li><a href="#economy">Economy</a></li>
+            <li><a href="#pvp">PvP</a></li>
+            <li><a href="#afk">AFK &amp; shards</a></li>
+            <li><a href="#teams">Teams &amp; friends</a></li>
+            <li><a href="#travel">Getting around</a></li>
+            <li><a href="#spawners">Spawners</a></li>
+            <li><a href="#tools">Tools &amp; QoL</a></li>
+            <li><a href="#voice">Voice chat</a></li>
+            <li><a href="#fairplay">Fair play</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <!-- ECONOMY -->
+          <article class="feature reveal" id="economy" style="--accent: var(--tan)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M15 9h-4.5a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 1 0 3H9"/></svg></span>
+              <h2>Economy</h2>
+            </div>
+            <p>Grind, farm and trade your way to the top of the money leaderboard.</p>
+            <ul class="points">
+              <li><strong>Money</strong> to spend in the shop, and <span class="shards">shards</span> for the shard shop and crate shop.</li>
+              <li><strong>Sell system</strong> with sell multipliers, so the more you grind the more you earn. Check what anything is worth first.</li>
+              <li><strong>Farming meta:</strong> see which crops pay best right now.</li>
+              <li><strong>Auction house</strong> to sell items to other players, and <strong>buy orders</strong> to request what you need.</li>
+              <li><strong>Billford</strong>, a special trader with his own deals.</li>
+            </ul>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/shop</li><li class="cmd">/shardshop</li><li class="cmd">/crateshop</li><li class="cmd">/sell</li><li class="cmd">/sellall</li><li class="cmd">/sellhand</li><li class="cmd">/sellmulti</li><li class="cmd">/worth</li><li class="cmd">/meta</li><li class="cmd">/ah</li><li class="cmd">/orders</li><li class="cmd">/bal</li><li class="cmd">/pay &lt;player&gt; &lt;amount&gt;</li><li class="cmd">/billford</li>
+            </ul>
+          </article>
+
+          <!-- PVP -->
+          <article class="feature reveal" id="pvp" style="--accent: var(--red)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4l11 11M4 4h4M4 4v4M20 4L9 15M20 4h-4M20 4v4M6 14l4 4M18 14l-4 4M5 19l2-2M19 19l-2-2"/></svg></span>
+              <h2>PvP</h2>
+            </div>
+            <p>Prove you're the best. Challenge a friend, queue up for a random opponent, or jump into the chaos.</p>
+            <ul class="points">
+              <li><strong>Duels</strong> against a player of your choice, or join the <strong>duel queue</strong>.</li>
+              <li><strong>FFA</strong> (free for all) with its own stats.</li>
+              <li>A <strong>ranked PvP arena</strong>.</li>
+              <li><strong>Bounties</strong> on other players' heads.</li>
+              <li><strong>Fast crystals</strong> for crystal PvP.</li>
+            </ul>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/duel &lt;player&gt;</li><li class="cmd">/duel queue</li><li class="cmd">/ffa</li><li class="cmd">/ffastats</li><li class="cmd">/pvp</li><li class="cmd">/bounty</li><li class="cmd">/leave</li>
+            </ul>
+          </article>
+
+          <!-- AFK -->
+          <article class="feature reveal" id="afk" style="--accent: var(--purple-light)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l7 9-7 11-7-11z"/><path d="M12 2v20"/></svg></span>
+              <h2>AFK zone &amp; shards</h2>
+            </div>
+            <p>Stand in the AFK zone to earn <span class="shards">shards</span> on a timer. Leaving the zone resets the timer, so stay put!</p>
+            <p>Shards are the purple second currency. Spend them in the shard shop and the crate shop.</p>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/afk</li><li class="cmd">/shards</li><li class="cmd">/shardshop</li>
+            </ul>
+          </article>
+
+          <!-- TEAMS -->
+          <article class="feature reveal" id="teams" style="--accent: var(--blue)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.5 4 2.5 4 6"/></svg></span>
+              <h2>Teams &amp; friends</h2>
+            </div>
+            <p>Team up, add friends and message each other. Somebody annoying? Ignore them.</p>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/team</li><li class="cmd">/friends</li><li class="cmd">/msg &lt;player&gt;</li><li class="cmd">/r</li><li class="cmd">/ignore &lt;player&gt;</li>
+            </ul>
+          </article>
+
+          <!-- GETTING AROUND -->
+          <article class="feature reveal" id="travel">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span>
+              <h2>Getting around</h2>
+            </div>
+            <p>Homes, warps, teleport requests and random teleport to get you into the wild fast, plus an RTP queue.</p>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/spawn</li><li class="cmd">/rtp</li><li class="cmd">/rtpq</li><li class="cmd">/home</li><li class="cmd">/sethome</li><li class="cmd">/homes</li><li class="cmd">/warp</li><li class="cmd">/tpa &lt;player&gt;</li><li class="cmd">/tpahere &lt;player&gt;</li><li class="cmd">/tpaccept</li>
+            </ul>
+          </article>
+
+          <!-- SPAWNERS -->
+          <article class="feature reveal" id="spawners" style="--accent: var(--yellow)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></span>
+              <h2>Spawners</h2>
+            </div>
+            <p>Stackable, Donut-style spawners. Stack them up to build a bigger, better farm in less space.</p>
+          </article>
+
+          <!-- TOOLS & QOL -->
+          <article class="feature reveal" id="tools" style="--accent: var(--purple-light)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9c4-5 14-5 18 0"/><path d="M12 6L6 21"/></svg></span>
+              <h2>Tools &amp; quality of life</h2>
+            </div>
+            <ul class="points">
+              <li><strong>Amethyst tools</strong> and <strong>vein mining</strong>.</li>
+              <li>A <strong>starter kit</strong> for new players.</li>
+              <li>A <strong>6-row ender chest</strong> with <span class="cmd">/ec</span>.</li>
+              <li><strong>Night vision</strong> with <span class="cmd">/nv</span>.</li>
+              <li><strong>Triple jump</strong> at spawn and in the AFK world.</li>
+              <li><strong>Leaderboards</strong>, <strong>stats</strong> and personal <strong>settings</strong>.</li>
+            </ul>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/ec</li><li class="cmd">/nv</li><li class="cmd">/lb</li><li class="cmd">/stats</li><li class="cmd">/settings</li>
+            </ul>
+          </article>
+
+          <!-- VOICE CHAT -->
+          <article class="feature reveal" id="voice">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="1"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></svg></span>
+              <h2>Proximity voice chat</h2>
+            </div>
+            <p>Talk to nearby players with the <strong>Simple Voice Chat</strong> mod. The closer you are, the louder they sound. You get a voice chat prompt when you join.</p>
+            <a class="btn btn--small" href="join.html#step-voice">How to set it up →</a>
+          </article>
+
+          <!-- FAIR PLAY -->
+          <article class="feature reveal" id="fairplay" style="--accent: var(--blue)">
+            <div class="feature__head">
+              <span class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+              <h2>Fair play</h2>
+            </div>
+            <p>Spawn is protected. See a cheater? Report them. Need help? Ask staff.</p>
+            <div class="feature__cmds-title">Commands</div>
+            <ul class="cmd-list">
+              <li class="cmd">/reporthacker &lt;user&gt; &lt;reason&gt;</li><li class="cmd">/helpop</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-wordmark.png" alt="UltimateDonutSMP" width="900" height="210" loading="lazy">
+          <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
+          <div class="footer-ips">
+            <div class="copy-box">
+              <span class="copy-box__label">JAVA</span>
+              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+            <div class="copy-box">
+              <span class="copy-box__label">BEDROCK</span>
+              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
+              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
+                <span data-copy-label>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="crates.html">Crates</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="commands.html">Commands</a></li>
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="rules.html">Rules</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-title">Community</div>
+          <div class="footer-social">
+            <a class="btn btn--discord btn--small" href="https://discord.gg/rgKhkx2fFa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+              Discord
+            </a>
+            <a class="btn btn--youtube btn--small" href="https://youtube.com/@ultimatedonutsmp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+              YouTube
+            </a>
+            <p class="muted" style="margin:6px 0 0;font-size:.9rem">Or type <span class="cmd">/discord</span> and <span class="cmd">/youtube</span> in game.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2026 UltimateDonutSMP. Not affiliated with Mojang, Microsoft or DonutSMP.</p>
+    </div>
+  </footer>
+</body>
+</html>
