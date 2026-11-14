@@ -208,32 +208,94 @@
   }
 
   /* 7. LIVE SERVER STATUS ------------------------------------------------- */
+  // Updates the big status box on the home page (#server-status) and the
+  // small badge in the header on every page ([data-status-badge]).
+  // Checks again every STATUS_REFRESH ms, and pauses while the tab is hidden.
+  // Note: mcsrvstat.us caches results for about a minute, so checking more
+  // often than every 60 seconds won't give fresher numbers.
+  var STATUS_REFRESH = 60000;
   var statusEl = $("#server-status");
-  if (statusEl) {
-    var statusText = $(".status__text", statusEl);
-    var setStatus = function (state, html) {
-      statusEl.setAttribute("data-state", state);
-      statusText.innerHTML = html;
-    };
-    var controller = window.AbortController ? new AbortController() : null;
-    var timeout = setTimeout(function () { if (controller) controller.abort(); }, 8000);
-    fetch(STATUS_API, controller ? { signal: controller.signal } : {})
-      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (data) {
-        clearTimeout(timeout);
-        if (data && data.online) {
-          var online = data.players ? data.players.online : 0;
-          var max = data.players ? data.players.max : "?";
-          setStatus("online",
-            '<span class="status__count"><b>' + Number(online) + "</b> / " + Number(max) + "</span> players online");
-        } else {
-          setStatus("offline", "Server is offline right now");
+  var badges = $$("[data-status-badge]");
+
+  if (statusEl || badges.length) {
+    var statusText = statusEl ? $(".status__text", statusEl) : null;
+    var statusTimer = null, statusBusy = false, lastCheck = 0;
+
+    var render = function (state, online, max) {
+      // Home page box
+      if (statusEl) {
+        statusEl.setAttribute("data-state", state);
+        if (state === "online") {
+          statusText.innerHTML = '<span class="status__count"><b>' + online + "</b> / " + max + "</span> players online";
+        } else if (state === "offline") {
+          statusText.textContent = "Server is offline right now";
+        } else if (statusEl.getAttribute("data-has-data") !== "1") {
+          // only show the error if we never got a good result
+          statusText.textContent = "Server status unavailable";
         }
-      })
-      .catch(function () {
-        clearTimeout(timeout);
-        setStatus("error", "Server status unavailable");
+        if (state !== "error") statusEl.setAttribute("data-has-data", "1");
+      }
+      // Header badges
+      badges.forEach(function (b) {
+        var txt = $(".header-status__text", b);
+        if (state === "error" && b.getAttribute("data-has-data") === "1") return; // keep last good value
+        b.hidden = false;
+        b.setAttribute("data-state", state);
+        if (state === "online") {
+          txt.innerHTML = "<b>" + online + "</b><span class=\"header-status__word\"> online</span>";
+          b.setAttribute("aria-label", online + " of " + max + " players online. Server status");
+          b.title = online + " / " + max + " players online";
+        } else if (state === "offline") {
+          txt.textContent = "Offline";
+          b.setAttribute("aria-label", "Server is offline. Server status");
+          b.title = "Server is offline";
+        } else {
+          txt.textContent = "Status ?";
+          b.setAttribute("aria-label", "Server status unavailable");
+          b.title = "Server status unavailable";
+        }
+        if (state !== "error") b.setAttribute("data-has-data", "1");
       });
+    };
+
+    var checkStatus = function () {
+      if (statusBusy) return;
+      statusBusy = true;
+      lastCheck = Date.now();
+      var controller = window.AbortController ? new AbortController() : null;
+      var timeout = setTimeout(function () { if (controller) controller.abort(); }, 8000);
+      fetch(STATUS_API, controller ? { signal: controller.signal, cache: "no-store" } : { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (data) {
+          if (data && data.online) {
+            var online = Number(data.players && data.players.online) || 0;
+            var max = Number(data.players && data.players.max) || "?";
+            render("online", online, max);
+          } else {
+            render("offline");
+          }
+        })
+        .catch(function () { render("error"); })
+        .then(function () { clearTimeout(timeout); statusBusy = false; });
+    };
+
+    var startStatus = function () {
+      clearInterval(statusTimer);
+      statusTimer = setInterval(checkStatus, STATUS_REFRESH);
+    };
+
+    checkStatus();
+    startStatus();
+
+    // Pause while the tab is in the background, catch up when it's back
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        clearInterval(statusTimer);
+      } else {
+        if (Date.now() - lastCheck >= STATUS_REFRESH) checkStatus();
+        startStatus();
+      }
+    });
   }
 
   /* 8. FEATURES SIDE MENU (SCROLLSPY) ------------------------------------- */
