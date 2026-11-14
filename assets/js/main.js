@@ -22,8 +22,8 @@
   "use strict";
 
   /* 1. SETTINGS ----------------------------------------------------------- */
-  var JAVA_IP = "ultimatedonutsmp.minekeep.gg";
-  var STATUS_API = "https://api.mcsrvstat.us/3/" + JAVA_IP;
+  var SERVER_IP = "play.ultimatedonutsmp.com"; // one IP for Java and Bedrock
+  var STATUS_API = "https://api.mcsrvstat.us/3/" + SERVER_IP;
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var $ = function (sel, root) { return (root || document).querySelector(sel); };

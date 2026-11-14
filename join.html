@@ -58,8 +58,8 @@
           <li><a class="nav__link" href="join.html" aria-current="page">How to Join</a></li>
           <li><a class="nav__link" href="rules.html">Rules</a></li>
           <li class="nav__play">
-            <!-- Copies the Java IP. Without JavaScript it links to the join page. -->
-            <a class="btn btn--primary btn--small" href="join.html" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-toast="IP copied! See you in game">
+            <!-- Copies the server IP. Without JavaScript it links to the join page. -->
+            <a class="btn btn--primary btn--small" href="join.html" data-copy="play.ultimatedonutsmp.com" data-copy-toast="IP copied! See you in game">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h3v2h2v2h2v2h2v4h-2v2h-2v2h-2v2H7z"/></svg>
               Play now
             </a>
@@ -77,21 +77,14 @@
         <p class="lead">Joining takes less than a minute. Non-premium players can join too.</p>
         <div class="ip-stack" style="margin-top:24px">
           <div class="copy-box ip-box">
-            <span class="copy-box__label">JAVA</span>
-            <code class="copy-box__value" id="j-ip-java">ultimatedonutsmp.minekeep.gg</code>
-            <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#j-ip-java" aria-label="Copy Java IP">
+            <span class="copy-box__label">IP</span>
+            <code class="copy-box__value" id="j-ip">play.ultimatedonutsmp.com</code>
+            <button class="copy-btn" type="button" data-copy="play.ultimatedonutsmp.com" data-copy-target="#j-ip" aria-label="Copy server IP">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
               <span data-copy-label>Copy IP</span>
             </button>
           </div>
-          <div class="copy-box ip-box ip-box--small">
-            <span class="copy-box__label">BEDROCK</span>
-            <code class="copy-box__value" id="j-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
-            <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#j-ip-bedrock" aria-label="Copy Bedrock IP">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
-              <span data-copy-label>Copy</span>
-            </button>
-          </div>
+          <p class="ip-note"><span class="ip-note__tag">JAVA</span><span class="ip-note__tag">BEDROCK</span> One IP for both editions.</p>
         </div>
         <div class="edition-tabs" style="margin:6px 0 0">
           <a class="btn btn--small btn--primary" href="#java-steps">Java Edition steps</a>
@@ -150,8 +143,8 @@
               <h3>Enter the server address</h3>
               <p>Give it any name you like, then paste this into <strong>Server Address</strong> and click Done:</p>
               <div class="copy-box">
-                <code class="copy-box__value" id="step-ip">ultimatedonutsmp.minekeep.gg</code>
-                <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#step-ip" aria-label="Copy Java IP">
+                <code class="copy-box__value" id="step-ip">play.ultimatedonutsmp.com</code>
+                <button class="copy-btn" type="button" data-copy="play.ultimatedonutsmp.com" data-copy-target="#step-ip" aria-label="Copy server IP">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
                   <span data-copy-label>Copy</span>
                 </button>
@@ -162,7 +155,7 @@
               <div class="mock__label">Server Name</div>
               <div class="mock__input">UltimateDonutSMP</div>
               <div class="mock__label">Server Address</div>
-              <div class="mock__input mock__input--focus">ultimatedonutsmp.minekeep.gg</div>
+              <div class="mock__input mock__input--focus">play.ultimatedonutsmp.com</div>
               <span class="mock__btn mock__btn--hl">Done</span>
             </div>
           </li>
@@ -207,13 +200,14 @@
         <div class="bedrock-box reveal" id="bedrock">
           <span class="eyebrow" style="color:var(--blue)">Bedrock Edition</span>
           <h2 style="font-size:1.6rem">Playing on phone, console or Windows Bedrock?</h2>
+          <p class="muted">Bedrock uses the same IP as Java. Here is how to add it:</p>
           <ol>
             <li>Open Minecraft (Bedrock Edition) and tap <strong>Play</strong>.</li>
             <li>Go to the <strong>Servers</strong> tab, scroll down and tap <strong>Add Server</strong>.</li>
             <li>Enter any name, and use this as the <strong>Server Address</strong>:
               <div class="copy-box">
-                <code class="copy-box__value" id="b-ip">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
-                <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#b-ip" aria-label="Copy Bedrock IP">
+                <code class="copy-box__value" id="b-ip">play.ultimatedonutsmp.com</code>
+                <button class="copy-btn" type="button" data-copy="play.ultimatedonutsmp.com" data-copy-target="#b-ip" aria-label="Copy server IP">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
                   <span data-copy-label>Copy</span>
                 </button>
@@ -265,7 +259,7 @@
           <details>
             <summary>Which version do I need?</summary>
             <div class="faq__body">
-              <p>The server runs on <strong>Java Edition 26.2</strong>, but older versions can join too. Bedrock players can join with <code class="cmd">ultimatedonutsmp.bedrock.minekeep.gg</code>.</p>
+              <p>The server runs on <strong>Java Edition 26.2</strong>, but older versions can join too. Bedrock players can join too, with the same IP: <code class="cmd">play.ultimatedonutsmp.com</code>.</p>
             </div>
           </details>
           <details>
@@ -306,22 +300,15 @@
           <p>The old DonutSMP, back on the menu. PvP, survival, AFK grinding, gacha crates and events.</p>
           <div class="footer-ips">
             <div class="copy-box">
-              <span class="copy-box__label">JAVA</span>
-              <code class="copy-box__value" id="f-ip-java">ultimatedonutsmp.minekeep.gg</code>
-              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.minekeep.gg" data-copy-target="#f-ip-java" aria-label="Copy Java IP">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
-                <span data-copy-label>Copy</span>
-              </button>
-            </div>
-            <div class="copy-box">
-              <span class="copy-box__label">BEDROCK</span>
-              <code class="copy-box__value" id="f-ip-bedrock">ultimatedonutsmp.<wbr>bedrock.minekeep.gg</code>
-              <button class="copy-btn" type="button" data-copy="ultimatedonutsmp.bedrock.minekeep.gg" data-copy-target="#f-ip-bedrock" aria-label="Copy Bedrock IP">
+              <span class="copy-box__label">IP</span>
+              <code class="copy-box__value" id="f-ip">play.ultimatedonutsmp.com</code>
+              <button class="copy-btn" type="button" data-copy="play.ultimatedonutsmp.com" data-copy-target="#f-ip" aria-label="Copy server IP">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M4 16V4h12"/></svg>
                 <span data-copy-label>Copy</span>
               </button>
             </div>
           </div>
+          <p class="ip-note" style="margin-top:10px"><span class="ip-note__tag">JAVA</span><span class="ip-note__tag">BEDROCK</span> Same IP for both.</p>
         </div>
 
         <nav aria-label="Footer">

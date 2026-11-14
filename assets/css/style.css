@@ -1534,3 +1534,14 @@ a.card:hover, a.card:focus-visible {
 .crate-card .price,
 .countdown b,
 .door { font-family: var(--font-body); font-weight: 800; }
+
+/* "One IP for both editions" note under IP boxes */
+.ip-note { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 18px; font-size: .92rem; color: var(--muted); }
+.ip-note__tag {
+  font-family: var(--font-display);
+  font-size: .75rem;
+  color: var(--tan);
+  background: #000;
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+}
